@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Navbar</title>
+	<link rel="stylesheet" href="./nav.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<div id="nav-menu">
+		<span>MENU</span>
+	</div>
+
+	<div id="nav-container">
+		<div id="nav-main" class="hidden">
+			<span>Shivam Agrawal Is Awesome</span>
+		</div>
+	</div>
+
+	<script src="jquery.js"></script>
+	<script>
+	$("#nav-menu").click(function() {
+		if($('#nav-main').hasClass('hidden')) {
+			$('#nav-main').removeClass('hidden');
+			$('#nav-main').addClass('shown');
+		}else{
+			$('#nav-main').removeClass('shown');
+			$('#nav-main').addClass('hidden');
+		}
+	});
+	</script>
+</body>
+</html>

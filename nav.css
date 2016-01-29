@@ -1,0 +1,38 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x:hidden;
+}
+
+#nav-container {
+	position: fixed;
+	width: auto;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+#nav-main {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #80CBC4;
+	transition: left 0.5s linear;
+}
+#nav-main.hidden {
+	left:-100%;
+}
+#nav-main.shown {
+	left:0;
+}
+#nav-menu {
+	position: absolute;
+	right: 0;
+	z-index: 1000;
+}
+
+/* TODO:
+- Add shadow overall all content when navbar opens: add to hidden rgba(0, 0, 0, 0.45);
+- Make navbar on right side, so hidden is +100% and shown is 0;
+*/
