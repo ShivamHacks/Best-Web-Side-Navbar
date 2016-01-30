@@ -2,32 +2,47 @@
 <html>
 <head>
 	<title>Navbar</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<link rel="stylesheet" href="./nav.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 	<div id="nav-menu">
-		<span>MENU</span>
+		<i class="fa fa-bars"></i>
 	</div>
 
 	<div id="nav-container">
 		<div id="nav-main" class="hidden">
+			<br>
 			<span>Shivam Agrawal Is Awesome</span>
 		</div>
 	</div>
 
-	<script src="jquery.js"></script>
+	<!-- ALL PAGE CONTENT GOES IN HERE -->
+	<div id="wrapper">
+
+	</div>
+
 	<script>
 	$("#nav-menu").click(function() {
-		if($('#nav-main').hasClass('hidden')) {
-			$('#nav-main').removeClass('hidden');
-			$('#nav-main').addClass('shown');
-		}else{
-			$('#nav-main').removeClass('shown');
-			$('#nav-main').addClass('hidden');
+		$('#nav-main').toggleClass('shown');
+		$('html').toggleClass('nav-open');
+		$('#nav-menu').toggleClass('nav-open');
+		$('#nav-main').data('open', true);
+	});
+	
+	$("#wrapper").click(function( event ) {
+		if (!($(event.target).attr("id") == "nav-main") && $('#nav-main').data('open') ) {
+			$('#nav-main').toggleClass('shown');
+			$('html').toggleClass('nav-open');
+			$('#nav-menu').toggleClass('nav-open');
+			$('#nav-main').data('open', false);
 		}
 	});
+	/* TODO: Add smooth scrolling to links */
 	</script>
 </body>
 </html>
